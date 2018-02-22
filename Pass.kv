@@ -8,6 +8,11 @@
 
 <MainScreen>:
     name: "main_screen"
+    canvas.before:
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            size: self.size
     
     GridLayout:
         color:(1,0,1,2)
@@ -67,6 +72,11 @@
         
 <HomePage>:
     name: "homepage"
+    canvas.before:
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            size: self.size
     BoxLayout:
         color:(1,0,1,2)
         orientation: "vertical"
@@ -79,7 +89,12 @@
             on_press: root.manager.current = "main_screen"
             
 <Registration>:
-    name:"registration" 
+    name:"registration"
+    canvas.before:
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            size: self.size
     GridLayout:
         color:(1,0,1,2)
         size_hint: (.5, .5)

@@ -1,0 +1,174 @@
+<ScreenManagement>:
+    Registration:
+        id: regi
+    MainScreen:
+        id: main
+    HomePage:
+    
+
+<MainScreen>:
+    name: "main_screen"
+    
+    GridLayout:
+        color:(1,0,1,2)
+        size_hint: (.5, .5)
+        pos_hint: {"center_x": .5, "center_y": .6}
+        cols: 2
+        padding: 20
+
+        Label:
+            color:(1,0,1,2)
+            size_hint: (4, 2)
+            text: "User Name"
+            font_size: 30
+            text_size: self.size
+            valign: "middle"
+
+        TextInput:
+            id: username
+            size_hint: (4, 2)
+            cursor_blink: True
+            font_size: 20
+            multiline: False
+
+        Label:
+            color:(1,0,1,2)
+            size_hint: (4, 2)
+            text:"Pin:"
+            font_size: 30
+            text_size: self.size
+            valign: "middle"
+
+        TextInput:
+            id: pin
+            size_hint: (4, 2)
+            cursor_blink: True
+            font_size: 20
+            multiline: False
+            password: True
+
+        
+
+        Button:
+            color:(1,1,1,1)
+            size_hint_y: None
+            height: 50
+            text:'Login'
+            on_press: root.manager.ids.main.login(username.text, pin.text)
+        Label:
+            color:(1,0,1,2)
+            id: success
+            size_hint:(4,2)
+            #color: (0,0,0,1)
+            font_size: 20
+            text_size: self.size
+            valign: "middle"
+            text: "please login"    
+        
+<HomePage>:
+    name: "homepage"
+    BoxLayout:
+        color:(1,0,1,2)
+        orientation: "vertical"
+        Label:
+            text: "Home Page"
+        Button:
+            color:(1,1,1,1)
+            text: "Go to main screen"
+            size_hint_y: 0.1
+            on_press: root.manager.current = "main_screen"
+            
+<Registration>:
+    name:"registration" 
+    GridLayout:
+        color:(1,0,1,2)
+        size_hint: (.5, .5)
+        pos_hint: {"center_x": .5, "center_y": .6}
+        cols: 2
+        padding: 20
+
+        Label:
+            color:(1,0,1,2)
+            size_hint: (4, 2)
+            text: "User Name"
+            font_size: 30
+            text_size: self.size
+            valign: "middle"
+
+        TextInput:
+            id: username_input
+            size_hint: (4, 2)
+            cursor_blink: True
+            font_size: 20
+            multiline: False
+
+        Label:
+            color:(1,0,1,2)
+            size_hint: (4, 2)
+            text:"user email:"
+            font_size: 30
+            text_size: self.size
+            valign: "middle"
+
+        TextInput:
+            id: useremail_input
+            size_hint: (4, 2)
+            cursor_blink: True
+            font_size: 20
+            multiline: False
+            #password: True
+        Label:
+            color:(1,0,1,2)
+            size_hint: (4, 2)
+            text: "User phone"
+            font_size: 30
+            text_size: self.size
+            valign: "middle"
+
+        TextInput:
+            id: userphone_input
+            size_hint: (4, 2)
+            cursor_blink: True
+            font_size: 20
+            multiline: False
+        Label:
+            color:(1,0,1,2)
+            size_hint: (4, 2)
+            text:"userpass"
+            font_size: 30
+            text_size: self.size
+            valign: "middle"
+
+        TextInput:
+            id: userpassword_input
+            size_hint: (4, 2)
+            cursor_blink: True
+            font_size: 20
+            multiline: False
+            password: True    
+    
+            
+
+        
+
+        Button:
+            color:(1,1,1,1)
+            size_hint_y: None
+            height: 50
+            text:'Registration'
+            on_press: root.manager.ids.regi.regis()
+        Label:
+            color:(1,0,1,2)
+            id: success
+            size_hint:(4,2)
+            #color: (0,0,0,1)
+            font_size: 20
+            text_size: self.size
+            valign: "middle"
+            text: "please register"   
+        Button:
+            color:(1,1,1,1)
+            size_hint_y: None
+            height: 50
+            text:'Login'
+            on_press: root.manager.current = "main_screen"                
